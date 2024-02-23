@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Muzzomo</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      {% include 'shared/_HeaderReferences.html' %}
+   </head>
+   <body class="inner_page login">
+      <div class="full_container">
+         <div class="container">
+            <div class="center verticle_center full_height">
+               <div class="login_section">
+                  <div class="logo_login">
+                     <div class="center">
+                        <img width="210" src="{% static 'images/logo/logo.png' %}" alt="#" />
+                     </div>
+                  </div>
+                  <div class="login_form">
+                     <form method="post" action="/">
+                        {% csrf_token %}
+                        <fieldset>
+                           <div class="field">
+                              <label class="label_field">Username</label>
+                              <input type="text" name="user_name" placeholder="Username" />
+                           </div>
+                           <div class="field">
+                              <label class="label_field">Password</label>
+                              <input type="password" name="password" placeholder="Password" />
+                           </div>
+                           <div class="field margin_0">
+                              <label class="label_field hidden">hidden label</label>
+                              <button type="submit" class="btn btn-outline-success btn-md">Sing In</button>
+                           </div>
+                           <div class="field text-center p-3">
+                           {% if error_message %}
+                           <h5><span class="badge bg-danger text-light badge rounded-pill">{{ error_message }}</span></h5>
+                           {% endif %}
+                        </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+      {% include 'shared/_FooterReferences.html' %}
+   </body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30 my-5">
+                <div class="full graph_head">
+                    <div class="heading1 margin_0">
+                        <h2>Add Customer</h2>
+                    </div>
+                </div>
+               <form action="" method="post">
+                {% csrf_token %}
+                <div class="row p-3">
+                    <div class="col-6 p-3">
+                        <label for="first_name" class="form-label">First name</label>
+                        <input id="first_name" name="first_name_txt" type="text" class="form-control" required>
+                    </div>
+                    <div class="col-6 p-3">
+                        <label for="last_name" class="form-label">Last name</label>
+                        <input id="last_name" name="last_name_txt" type="text" class="form-control" required>
+                    </div>
+                    <div class="col-6 p-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input id="phone" name="phone_txt" type="tel" class="form-control" required>
+                    </div>
+                    <div class="col-6 p-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input id="address" name="address_txt" type="text" class="form-control" required>
+                    </div>
+                    <div class="col-12 p-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Note</label>
+                        <textarea class="form-control" name ="note_txt" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    </div>
+                    <div class="col-12 text-right">
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                    </div>
+                </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

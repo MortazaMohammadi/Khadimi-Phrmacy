@@ -1,0 +1,45 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30 my-5">
+                <div class="full graph_head">
+                    <div class="heading1 margin_0">
+                        <h2>Update Medicine</h2>
+                    </div>
+                </div>
+                <form action="" method = 'post'>
+                    {% csrf_token %}
+                    <div class="row p-3">
+                        <div class="col-6 p-3">
+                            <label for="medication_name" class="form-label">Medicine Code</label>
+                            <input name="medication_txt" value="{{ order.medication.medication_code }}" id="medication_name" type="text" class="form-control">
+                        </div>
+                        <div class="col-6 p-3">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input name="quantity_txt" value="{{ order.quantity }}" id="quantity" type="number" class="form-control">
+                        </div>
+                        <div class="col-6 p-3">
+                            <label for="customer_name" class="form-label">Customer Id</label>
+                            <input name="customer_txt" value="{{ order.customer.id }}" id="customer_name" type="text" class="form-control">
+                        </div>
+                        <div class="col-6 p-3">
+                            <label for="customer_date" class="form-label">Date</label>
+                            <input name="date_txt" value="{{ order.date }}" id="customer_date" type="date" class="form-control">
+                        </div>
+                        <div class="col-12 p-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Note</label>
+                            <textarea class="form-control" name="note_txt" id="exampleFormControlTextarea1" rows="5">{{ order.note }}</textarea>
+                        </div>
+                        <div class="col-12 text-right">
+                            <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

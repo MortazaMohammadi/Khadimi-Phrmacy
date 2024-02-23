@@ -1,0 +1,51 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+       <div class="col-md-12">
+          <div class="white_shd full margin_bottom_30">
+             <div class="full graph_head">
+                <div class="heading1 margin_0">
+                   <h2>Order List Tables</h2>
+                </div>
+             </div>
+             <div class="table_section padding_infor_info">
+                <div class="table-responsive-sm">
+                   <table class="table">
+                      <thead>
+                         <tr>
+                            <th>#</th>
+                            <th>Medicine Name</th>
+                            <th>Medicine Number</th>
+                            <th>Total Price</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Note</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                        {% for order,cost in data %}
+                         <tr>
+                            <td>{{ order.id }}</td>
+                            <td>{{ order.medication.medication_code }}: {{ order.medication.medication_name }}</td>
+                            <td>{{ order.quantity }}</td>
+                            <td>{{ cost }}</td>
+                            <td>{{ order.customer.id }}: {{ order.customer.first_name }} {{ order.customer.last_name }}</td>
+                            <td>{{ order.date }}</td>
+                            <td>{{ order.note }}</td>
+                            <td><a href="update_order_view/{{ order.id }}" class="btn"><i class="fa fa-pencil text-warning" style="font-size: 18px;" aria-hidden="true"></i></a></td>
+                            <td><a href="delete_order_view/{{ order.id }}" class="btn"><i class="fa fa-trash text-danger" style="font-size: 18px;" aria-hidden="true"></i></a></td>
+                         </tr>
+                         {% endfor %}
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+</div>
+{% endblock %}

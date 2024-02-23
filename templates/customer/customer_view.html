@@ -1,0 +1,49 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+       <div class="col-md-12">
+          <div class="white_shd full margin_bottom_30">
+             <div class="full graph_head">
+                <div class="heading1 margin_0">
+                   <h2>Customer List Tables</h2>
+                </div>
+             </div>
+             <div class="table_section padding_infor_info">
+                <div class="table-responsive-sm">
+                   <table class="table">
+                      <thead>
+                         <tr>
+                            <th>#</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Phone</th>
+                            <th>Adress</th>
+                            <th>Note</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                        {% for customer in customer_object %}
+                         <tr>
+                            <td>{{ customer.id }}</td>
+                            <td>{{ customer.first_name }}</td>
+                            <td>{{ customer.last_name }}</td>
+                            <td>{{ customer.phone }}</td>
+                            <td>{{ customer.address }}</td>
+                            <td>{{ customer.note }}</td>
+                            <td><a class="btn" href="update_customer_view/{{customer.id}}"><i class="fa fa-pencil text-warning" style="font-size: 18px;" aria-hidden="true"></i></a></td>
+                            <td> <a href="delete_customer/{{customer.id}}" class="btn"> <i class="fa fa-trash text-danger" style="font-size: 18px;" aria-hidden="true"></i></a></td>
+                         </tr>
+                         {% endfor %}
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+</div>
+{% endblock %}

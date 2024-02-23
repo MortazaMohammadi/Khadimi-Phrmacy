@@ -1,0 +1,50 @@
+{% load static %}
+<nav id="sidebar">
+    <div class="sidebar_blog_1">
+       <div class="sidebar-header">
+          <div class="logo_section">
+             <a href="dashborad"><img class="logo_icon img-responsive" src="{% static 'images/logo/logo_icon.png' %}" alt="#" /></a>
+          </div>
+       </div>
+       <div class="sidebar_user_info">
+          <div class="icon_setting"></div>
+          <div class="user_profle_side">
+             <div class="user_img"><img class="img-responsive" src="{% static 'images/logo/logo_icon.png' %}" alt="#" /></div>
+             <div class="user_info">
+                <h6>{{ user }}</h6>
+                <p><span class="online_animation"></span> Online</p>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="sidebar_blog_2">
+       <h4>General</h4>
+       <ul class="list-unstyled components">
+          <li class="active"><a href="/"><i class="fa fa-clock-o orange_color"></i> <span>Dashboard</span></a></li>
+          <li>
+             <a href="#customer" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user purple_color"></i> <span>Customer</span></a>
+             <ul class="collapse list-unstyled" id="customer">
+                <li><a href="/customer_view">> <span>Customer list</span></a></li>
+                <li><a href="/add_customer_view">+ <span>Add Customer</span></a></li>
+             </ul>
+             <a href="#medicine" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-medkit purple_color"></i> <span>Medicine</span></a>
+             <ul class="collapse list-unstyled" id="medicine">
+               <li><a href="/medicine_view">> <span>Medicine list</span></a></li>
+               <li><a href="/add_medicine_view">+ <span>Add Medicine</span></a></li>
+             </ul>
+             <a href="#order" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cart-plus purple_color"></i> <span>Order</span></a>
+             <ul class="collapse list-unstyled" id="order">
+               <li><a href="/order_view">> <span>Order list</span></a></li>
+               <li><a href="/add_order_view">+ <span>Add Order</span></a></li>
+             </ul>
+             <a href="#doctor" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user purple_color"></i> <span>Customer Loen</span></a>
+             <ul class="collapse list-unstyled" id="doctor">
+               <li><a href="/loen_view">> <span>Loen</span></a></li>
+               <li><a href="/add_loen_view">+ <span>Add Loen</span></a></li>
+             </ul>
+          </li>
+          <li ><a href="/calendar_view"><i class="fa fa-calendar purple_color"></i> <span>Calendar</span></a></li>
+          <li ><a href="/register_user"><i class="fa fa-user purple_color"></i> <span>Register New Admin</span></a></li>
+       </ul>
+    </div>
+ </nav>
